@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>My Logbook</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'mylogbook/style.css' %}">
+</head>
+
+<body>
+
+	<header>
+  		<h2>MyLogbook</h2>
+		<h6>A Django/MariaDB flight logging application by David Tod Consulting Ltd</h6>
+	</header>
+
+  <section>
+  <nav>
+
+	{% block menu %}
+	{% endblock %}
+
+	<p>
+	<a href="">Analytics</a>
+	<br>
+	<a href="">Summary</a>
+	<br>
+	<a href="">List Flights</a>
+	<br>
+	<a href="">New Flight</a>
+
+  </nav>
+  <article>
+            {% block content %}
+            {% endblock %}
+  </article>
+</section>
+
+<footer>
+  &copy David Tod Consulting Ltd.
+</footer>
+
+</body>
+</html>
+

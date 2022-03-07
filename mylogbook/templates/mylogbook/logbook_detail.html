@@ -1,0 +1,68 @@
+{% extends 'polls/boilerplate2.html' %}
+
+
+
+
+            {% block content %}
+       <center> <table id=logbook >
+                        {% for field in detail_flight %}
+            <th>Log ID</td><td>{{ field.log_id }}</td>
+		<tr>
+            <th>Date of Flight</th><td>{{ field.date_of_flight }}</td>
+		<tr>
+            <th>Aircraft Type</th><td>{{ field.aircraft_type }}</td>
+		<tr>
+            <th>Registration</th><td>{{ field.registration }}</td>
+		<tr>
+            <th>Captain</th><td>{{ field.captain }}</td>
+		<tr>
+            <th>Holder Operating Capacity</th><td>{{ field.holder_operating_capacity }}</td>
+		<tr>
+		<th>Airfield (from)</th><td>{{ field.airfield_from }}</td>
+		<tr>
+            <th>Airfield (to)</th><td>{{ field.airfield_to }}</td>
+		<tr>
+            <th>Depart (GMT)</th><td>{{ field.depart_gmt|date:'H:i'  }}</td>
+		<tr>
+            <th>Arrive (GMT)</th><td>{{ field.arrive_gmt|date:'H:i'  }}</td>
+		<tr>
+            <th>Total Time</th><td>{{ field.total_time|date:'H:i'  }}</td>
+		<tr>
+            <th>P1 / Single Engine / Day</th><td>{{ field.p1_se_day|date:'H:i' }}</td>
+		<tr>
+            <th>Dual / Single Engine / Day</th><td>{{ field.dual_se_day|date:'H:i' }}</td>
+		<tr>
+            <th> P1 / Multi Engine / Day</th><td>{{ field.p1_me_day|date:'H:i' }}</td>
+		<tr>
+            <th>Dual / Multi Engine / Day</th><td>{{ field.dual_me_day|date:'H:i' }}</td>
+		<tr>
+            <th>P1 / Single Engine / Night</th><td>{{ field.p1_se_night|date:'H:i' }}</td>
+		<tr>
+            <th>Dual / Single Engine / Night</th><td>{{ field.dual_se_night|date:'H:i' }}</td>
+		<tr>
+            <th>P1 / Multi Engine / Night</th><td>{{ field.p1_me_night|date:'H:i' }}</td>
+		<tr>
+            <th>Dual / Multi Engine / Night</th><td>{{ field.dual_me_night|date:'H:i' }}</td>
+		<tr>
+            <th>Instrument Flying</th><td>{{ field.instrument_flying|date:'H:i' }}</td>
+		<tr>
+            <th>Simulated Instrument Flying</th><td>{{ field.simulated_instrument_flying|date:'H:i' }}</td>
+		<tr>
+            <th>Takeoff (Day)</th><td>{{ field.takeoff_day }}</td>
+		<tr>
+            <th>Landing (Day)</th><td>{{ field.landing_day }}</td>
+		<tr>
+            <th>Takeoff (Night)</th><td>{{ field.takeoff_night }}</td>
+		<tr>
+            <th>Landing (Night)</th><td>{{ field.landing_night }}</td>
+		<tr>
+            <th>Takeoff (Water)</th><td>{{ field.takeoff_water }}</td>
+		<tr>
+            <th>Landing (Water)</th><td>{{ field.landing_water }}</td>
+		<tr>
+            <th>Remarks</th><td>{{ field.remarks }}</td>
+		<tr>
+            {% endfor %}
+		</table></center>        
+    {% endblock %}
+ 
